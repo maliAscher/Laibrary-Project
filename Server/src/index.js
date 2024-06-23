@@ -24,6 +24,9 @@
 const express = require('express');
 const connectDB = require('./models/db');
 const bookRouter = require('./routers/BookRouter');
+const cors = require('cors');
+
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -33,6 +36,7 @@ connectDB();
 
 // Middleware
 app.use(express.json());
+app.use(cors());
 
 // Routes
 app.use('/books', bookRouter);

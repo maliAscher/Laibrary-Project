@@ -32,15 +32,15 @@ const mongoose = require("mongoose");
 const BookSchema = new mongoose.Schema({
   id: { type: Number },
   name: { type: String, required: true },
-  auther: { type: String, required: true },
-  gener: { type: String, required: true },
+  author: { type: String, required: true },
+  genre: { type: String, required: true },
   status: { type: Number },
   limit_age: { type: String, required: true, min: 0, max: 10 },
 });
 
 // Instance method
 BookSchema.methods.getBookInfo = function () {
-  return `Id: ${this.id}, Name: ${this.name}, Auther: ${this.auther}, Gener: ${this.gener}, Status: ${this.status}, Limit_Age: ${this.limit_age}`;
+  return `Id: ${this.id}, Name: ${this.name}, Author: ${this.author}, Gener: ${this.genre}, Status: ${this.status}, Limit_Age: ${this.limit_age}`;
 };
 
 module.exports = mongoose.model("Book", BookSchema);
