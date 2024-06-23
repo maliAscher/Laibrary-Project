@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+      "target": "es6",
+      "module": "commonjs",
+      "outDir": "./dist",
+      "strict": true,
+      "esModuleInterop": true
+    },
+    "include": ["src/**/*.ts", "src/index.js", "src/routers/BookRouter.js", "src/routers/BorrowRouter.js", "src/routers/UserRouter.js", "src/models/BookModel.js", "src/models/BorrowModel.js", "src/models/UserModel.js", "src/models/db.js", "src/controllers/BorrowController.js", "src/controllers/BorrowController.js", "src/controllers/BookController.js","src/controllers/UserController.js"],
+    "exclude": ["node_modules"]
+  }
+  
