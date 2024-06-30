@@ -1,10 +1,11 @@
 // src/Books.js
 import React, { useState, useEffect } from 'react';
 import { getAllBooks, createBook, deleteBook, updateBook } from '../Servers/bookAPI';
+import { Link } from 'react-router-dom';
 
 const Book = () => {
   const [books, setBooks] = useState([]);
-  const [newBook, setNewBook] = useState({ name: '', author: '', genre: '', limit_age: '',status:''});
+  const [newBook, setNewBook] = useState({ name: '', author: '', genre: '', limit_age: '', status: '' });
   const [updateBookId, setUpdateBookId] = useState(null);
 
   useEffect(() => {
@@ -24,7 +25,7 @@ const Book = () => {
     try {
       await createBook(newBook);
       fetchBooks();
-      setNewBook({ name: '', author: '', genre: '', limit_age: '',status:'' });
+      setNewBook({ name: '', author: '', genre: '', limit_age: '', status: '' });
     } catch (error) {
       console.error(error);
     }
@@ -44,7 +45,7 @@ const Book = () => {
       await updateBook(updateBookId, newBook);
       fetchBooks();
       setUpdateBookId(null);
-      setNewBook({ name: '', author: '', genre: '', limit_age: '',status:''});
+      setNewBook({ name: '', author: '', genre: '', limit_age: '', status: '' });
     } catch (error) {
       console.error(error);
     }
@@ -53,6 +54,10 @@ const Book = () => {
   return (
     <div>
       <h1>Books</h1>
+      <br></br>
+      <Link to='/demo'>
+        <button>To the Next Page</button>
+      </Link>
       <div>
         <input
           type="text"
@@ -78,18 +83,12 @@ const Book = () => {
           value={newBook.limit_age}
           onChange={(e) => setNewBook({ ...newBook, limit_age: e.target.value })}
         />
-         <input
+        <input
           type="number"
           placeholder="status"
           value={newBook.status}
           onChange={(e) => setNewBook({ ...newBook, status: e.target.value })}
         />
-        {/* <input
-          type="text"
-          placeholder="status"
-          value={newBook.status}
-          onChange={(e) => setNewBook({ ...newBook, status: e.target.value })}
-        /> */}
         {updateBookId ? (
           <button onClick={handleUpdateBook}>Update Book</button>
         ) : (
