@@ -36,11 +36,11 @@ const BookSchema = new mongoose.Schema({
   genre: { type: String, required: true },
   status: { type: Number },
   limit_age: { type: String, required: true, min: 0, max: 10 },
-  copiesAvailable: {type:Number ,required: true},
-  totalCopies: {type:Number ,required: true},
-  language :{ type: String, required: true },
-  location: {type:Number ,required: true}, 
-  summary: {type:Number ,required: true}, 
+  // copiesAvailable: {type:Number ,required: true},
+  // totalCopies: {type:Number ,required: true},
+  // language :{ type: String, required: true },
+  // location: {type:Number ,required: true}, 
+  // summary: {type:Number ,required: true}, 
 });
 
 // Instance method
