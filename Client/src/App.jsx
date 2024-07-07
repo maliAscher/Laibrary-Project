@@ -2,13 +2,13 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Book from './components/Book';
-import Demo from './components/Demo';
+import HomePage from './components/HomePage';
 
 const App = () => {
   return (
     <Routes>
-      <Route path='/' element={<Book />} />
-      <Route path='/demo' element={<Demo />} />
+      <Route path='/' element={<HomePage />} />
+      <Route path='/book' element={<Book />} />
     </Routes>
   );
 };
