@@ -1,9 +1,11 @@
 import { Route, Routes, useRoutes } from 'react-router-dom';
-import Demo from './components/Demo';
+import Book from './components/Book';
+import AddBook from './components/AddBook';
 
 const Routing = () => {
   let element = useRoutes([
-    { path: '/demo', element: <Demo /> },
+    { path: '/book', element: <Book/> },
+    { path: '/add-book', element: <AddBook /> },
   ]);
 
   return element;
