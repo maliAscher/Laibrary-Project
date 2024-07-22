@@ -35,7 +35,7 @@ const EditBook = () => {
           await updateBook(id, book);
           Swal.fire("Updated!", "", "success").then(() => {
             setTimeout(() => {
-              navigate('/'); // Navigate back to the Books page after 2 seconds
+              navigate('/book'); // Navigate back to the Books page after 2 seconds
             }, 2000);
           });
         } catch (error) {
